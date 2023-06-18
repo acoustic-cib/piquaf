@@ -6,6 +6,11 @@ A Python library that creates <b>P</b>ubl<b>I</b>cation <b>QUA</b>lity <b>F</b>i
     from tqdm import tqdm
     for i in tqdm(range(10000)):
 
+## Installation
+
+1. Install GLE (https://glx.sourceforge.io/) using the appropriate installer for your machine. GLE should be accessible from the command prompt.
+2. 
+
 ## History of this project
 
 When I created by PhD thesis in LaTeX, I was adamant about creating figures that would match the style of the document, and I was unhappy using figures created in MATLAB or Octave, which I used at that time. After looking for some time, I settled on GLE (https://glx.sourceforge.io/), which uses a simple format text script and text data files. 

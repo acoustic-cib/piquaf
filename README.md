@@ -1,6 +1,11 @@
 # piquaf
 A Python library that creates <b>P</b>ubl<b>I</b>cation <b>QUA</b>lity <b>F</b>igures from matplotlib figures, using the GLE (Graphics Layout Engine) compiler.
 
+## Usage
+
+    from tqdm import tqdm
+    for i in tqdm(range(10000)):
+
 ## History of this project
 
 When I created by PhD thesis in LaTeX, I was adamant about creating figures that would match the style of the document, and I was unhappy using figures created in MATLAB or Octave, which I used at that time. After looking for some time, I settled on GLE (https://glx.sourceforge.io/), which uses a simple format text script and text data files. 

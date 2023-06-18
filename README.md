@@ -9,6 +9,11 @@ A Python library that creates <b>P</b>ubl<b>I</b>cation <b>QUA</b>lity <b>F</b>i
 ## Installation
 
 1. Install GLE (https://glx.sourceforge.io/) using the appropriate installer for your machine. GLE should be accessible from the command prompt.
+2. Clone piquaf into your virtual environment (https://github.com/acoustic-cib/piquaf)
+
+## To-Do
+
+1. Add functionality for subplots
 2. 
 
 ## History of this project

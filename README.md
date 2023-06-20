@@ -1,5 +1,5 @@
 # piquaf
-A Python library that creates <b>P</b>ubl<b>I</b>cation <b>QUA</b>lity <b>F</b>igures from matplotlib figures, using the GLE (Graphics Layout Engine) compiler.
+A Python library that creates <b>P</b>ubl<b>I</b>cation <b>QUA</b>lity <b>F</b>igures from matplotlib figures, using the PyX (https://pypi.org/project/PyX/) engine.
 
 ## Usage
 
@@ -8,7 +8,7 @@ A Python library that creates <b>P</b>ubl<b>I</b>cation <b>QUA</b>lity <b>F</b>i
 
 ## Installation
 
-1. Install GLE (https://glx.sourceforge.io/) using the appropriate installer for your machine. GLE should be accessible from the command prompt.
+1. Install PyX (https://pypi.org/project/PyX/) and verify that it can create your desired output files (PDF, EPS, etc).
 2. Clone piquaf into your virtual environment (https://github.com/acoustic-cib/piquaf)
 
 ## To-Do

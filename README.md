@@ -3,8 +3,7 @@ A Python library that creates <b>P</b>ubl<b>I</b>cation <b>QUA</b>lity <b>F</b>i
 
 ## Usage
 
-    from tqdm import tqdm
-    for i in tqdm(range(10000)):
+    in progress!
 
 ## Installation
 

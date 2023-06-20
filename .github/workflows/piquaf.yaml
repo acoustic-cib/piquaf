@@ -1,8 +1,8 @@
-name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
+name: piquaf-pylint-pytest
+run-name: ${{ github.actor }} is Linting and testing
 on: [push]
 jobs:
-  check-bats-version:
+  run-pylint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

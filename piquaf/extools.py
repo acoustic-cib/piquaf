@@ -65,9 +65,9 @@ def extract_data(fig):
         line_style = this_line.get_linestyle()
         line_width = this_line.get_linewidth()
         # data
-        aa = np.array(this_line.get_data())
-        x = aa[0, :]
-        y = aa[1, :]
+        a_a = np.array(this_line.get_data())
+        g_x = a_a[0, :]
+        g_y = a_a[1, :]
 
         list_line.append(
             {
@@ -76,8 +76,8 @@ def extract_data(fig):
                 "draw_style": draw_style,
                 "line_style": line_style,
                 "line_width": line_width,
-                "x": x,
-                "y": y,
+                "x": g_x,
+                "y": g_y,
             }
         )
 

@@ -11,7 +11,6 @@ plt2gle.py - top level functions
 """
 import tempfile
 import os
-from pyx import graph
 from piquaf.extools import get_title, get_xlabel, get_ylabel, extract_data
 from numpy import savetxt, column_stack, array
 
@@ -26,9 +25,9 @@ def createLine2D(fig):
     extract the relevant information and create the
     PyX figure and
     """
-    title = get_title(fig)
-    xlabel = get_xlabel(fig)
-    ylabel = get_ylabel(fig)
+    get_title(fig)
+    get_xlabel(fig)
+    get_ylabel(fig)
     list_line = extract_data(fig)
 
     ###########################

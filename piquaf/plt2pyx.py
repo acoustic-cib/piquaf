@@ -45,6 +45,8 @@ def createLine2D(fig):
             save_path = os.path.join(cur_dir, f"{ind:d}.dat")
             savetxt(save_path, column_stack([x, y]), fmt="%.4f", delimiter=" ")
 
+    return cur_dir
+
 
 """
 from pyx import *

@@ -30,4 +30,6 @@ def test_createLine2D():
     ax.set_ylabel("Voltage (V)")
     ax.legend(fontsize=14)
 
-    createLine2D(fig)
+    outpath = createLine2D(fig)
+
+    assert outpath is not None, print("plt2pyx returned no path")

@@ -1,14 +1,4 @@
-"""
-Copyright (c) 2023, Cibby Pulikkaseril
-All rights reserved.
 
-This source code is licensed under the BSD-style license found in the
-LICENSE file in the root directory of this source tree. 
-
-plt2gle.py - top level functions 
-
-
-"""
 import tempfile
 import os
 from piquaf.extools import get_title, get_xlabel, get_ylabel, extract_data
@@ -45,6 +35,20 @@ def createLine2D(fig):
             save_path = os.path.join(cur_dir, f"{ind:d}.dat")
             savetxt(save_path, column_stack([x, y]), fmt="%.4f", delimiter=" ")
 
+    #########################
+    ## run Pyx
+    ########################
+    # next create PxY graph
+    g = graph.graphxy(width=10, 
+                    x=graph.axis.linear(min=0, max=50, title=xlabel), 
+                    y=graph.axis.linear(min=-0.5, max=0.5, title=ylabel), 
+                    key=graph.key.key(pos="br", dist=0.1))
+    for ind, this_df in enumerate(data_file_list):
+        g.plot(graph.data.file(this_df, x=1, y=2, title=list_line[ind]['label']), styles=line_style)
+
+    g.text(5, 5, title, [text.halign.boxcenter])
+
+    g.writePDFfile(fname)
     return cur_dir
 
 

@@ -13,7 +13,6 @@ https://matplotlib.org/stable/tutorials/intermediate/artists.html#object-contain
 """
 import numpy as np
 import re
-# from pyx.style import style.linestyle.solid, style.linestyle.dashed, style.linestyle.dotted
 
 
 def get_title(fig):
@@ -68,7 +67,7 @@ def extract_data(fig):
             case "-":
                 pass
             case "--":
-                line_style = 'style.linestyle.dashed'
+                line_style = "style.linestyle.dashed"
             case ":":
                 pass
         line_width = this_line.get_linewidth()

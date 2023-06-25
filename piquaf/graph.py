@@ -11,6 +11,7 @@ use the same taxonomy that PyX uses
 """
 from pyx import graph
 
+
 class PGraph(object):
     """
     class PGraph
@@ -54,7 +55,7 @@ class PGraph(object):
         self.ylabel = ylabel
 
     def set_line_list(self, line_list):
-        """ set_line_list(line_list)"""
+        """set_line_list(line_list)"""
         self.line_list = line_list
 
     def create_figure(self):
@@ -64,15 +65,16 @@ class PGraph(object):
         in this class, create a dummy figure and store the graphics
         handle, g
         """
-        self.g = graph.graphxy(width=10, 
-            x=graph.axis.linear(min=0, max=50, title=self.xlabel), 
-            y=graph.axis.linear(min=-0.5, max=0.5, title=self.ylabel))
-        
+        self.g = graph.graphxy(
+            width=10,
+            x=graph.axis.linear(min=0, max=50, title=self.xlabel),
+            y=graph.axis.linear(min=-0.5, max=0.5, title=self.ylabel),
+        )
 
     def write_to_file(self, filename):
-        """ 
+        """
         write_to_file(filename)
-        
+
         create an output file from graph object in self.g
         the type of file is inferred from the extension
         """
@@ -85,17 +87,22 @@ class PGraphLine2D(PGraph):
     """
 
     def set_line_list(self, line_list):
-        """ set_line_list(line_list)"""
+        """set_line_list(line_list)"""
         self.line_list = line_list
 
     def create_figure(self):
-        """ create_figure()"""
+        """create_figure()"""
         # next create PxY graph
-        g = graph.graphxy(width=10, 
-                x=graph.axis.linear(min=0, max=50, title=self.xlabel), 
-                y=graph.axis.linear(min=-0.5, max=0.5, title=self.ylabel), 
-                key=graph.key.key(pos="br", dist=0.1))
-        for ind, this_df in enumerate(data_file_list):
-            g.plot(graph.data.file(this_df, x=1, y=2, title=list_line[ind]['label']), styles=list_line[ind]['line_style'])
+        g = graph.graphxy(
+            width=10,
+            x=graph.axis.linear(min=0, max=50, title=self.xlabel),
+            y=graph.axis.linear(min=-0.5, max=0.5, title=self.ylabel),
+            key=graph.key.key(pos="br", dist=0.1),
+        )
+        for ind, this_df in enumerate(self.line_list):
+            g.plot(
+                graph.data.file(this_df, x=1, y=2, title=self.list_line[ind]["label"]),
+                styles=self.list_line[ind]["line_style"],
+            )
 
-        g.text(5, 5, title, [text.halign.boxcenter])
+        # g.text(5, 5, self.set_line_listtitle, [text.halign.boxcenter])

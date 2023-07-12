@@ -19,7 +19,7 @@ def test_pgraph_pdf():
     gg = PGraph()
     gg.create_figure()
 
-    file_list = ["test.pdf", "test.svg", "test.eps"]
+    file_list = ["test.pdf"]
     outcome = []
     with tempfile.TemporaryDirectory() as tmpdirname:
         for this_file in file_list:

@@ -33,13 +33,13 @@ from piquaf.graph import PGraph
 
 
 def test_tmpfile():
-
     gg = PGraph()
     gg.create_figure()
 
     FLAG_OK = False
     with tempfile.TemporaryDirectory() as tmpdirname:
-        file_path = tmpdirname + "\\test.pdf"
+        print(tmpdirname)
+        file_path = "test.pdf"
         gg.write_to_file(file_path)
         FLAG_OK = True
 

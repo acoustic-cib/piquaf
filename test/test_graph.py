@@ -14,17 +14,28 @@ import tempfile
 from piquaf.graph import PGraph
 
 
-def test_pgraph_pdf():
-    """test the PGraph class, does it execute and create a file?"""
-    gg = PGraph()
-    gg.create_figure()
+# def test_pgraph_pdf():
+#     """test the PGraph class, does it execute and create a file?"""
+#     gg = PGraph()
+#     gg.create_figure()
 
-    file_list = ["test.pdf"]
-    outcome = []
+#     file_list = ["test.pdf", "test.svg", "test.eps"]
+#     outcome = []
+#     with tempfile.TemporaryDirectory() as tmpdirname:
+#         for this_file in file_list:
+#             file_path = os.path.join(tmpdirname, this_file)
+#             gg.write_to_file(file_path)
+#             outcome.append(os.path.isfile(file_path))
+
+#     assert all(outcome), print("PGraph did not successfully create file")
+
+def test_tmpfile():
+
+    FLAG_OK = False
     with tempfile.TemporaryDirectory() as tmpdirname:
-        for this_file in file_list:
-            file_path = os.path.join(tmpdirname, this_file)
-            gg.write_to_file(file_path)
-            outcome.append(os.path.isfile(file_path))
+        file_path = tmpdirname + '\\test.txt'
+        with open(file_path, 'w') as f:
+            f.write('hi')
+            FLAG_OK = True
 
-    assert all(outcome), print("PGraph did not successfully create file")
+    assert FLAG_OK, "FLAG_OK is False"

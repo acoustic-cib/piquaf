@@ -14,6 +14,7 @@ https://matplotlib.org/stable/tutorials/intermediate/artists.html#object-contain
 import re
 from numpy import array, savetxt, column_stack
 
+
 def get_title(fig):
     """
     title = get_title(fig)

@@ -10,9 +10,10 @@ test_graph.py
 
 """
 #
-#import os
+# import os
 import tempfile
-#from piquaf.graph import PGraph
+
+from piquaf.graph import PGraph
 
 
 # def test_pgraph_pdf():
@@ -30,13 +31,16 @@ import tempfile
 
 #     assert all(outcome), print("PGraph did not successfully create file")
 
+
 def test_tmpfile():
+
+    gg = PGraph()
+    gg.create_figure()
 
     FLAG_OK = False
     with tempfile.TemporaryDirectory() as tmpdirname:
-        file_path = tmpdirname + '\\test.txt'
-        with open(file_path, 'w') as f:
-            f.write('hi')
-            FLAG_OK = True
+        file_path = tmpdirname + "\\test.pdf"
+        gg.write_to_file(file_path)
+        FLAG_OK = True
 
     assert FLAG_OK, "FLAG_OK is False"

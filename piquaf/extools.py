@@ -11,9 +11,8 @@ a good reference for how containers work in Matplotlib is in
 https://matplotlib.org/stable/tutorials/intermediate/artists.html#object-containers
 
 """
-import numpy as np
 import re
-
+from numpy import array, savetxt, column_stack
 
 def get_title(fig):
     """
@@ -72,7 +71,7 @@ def extract_data(fig):
                 pass
         line_width = this_line.get_linewidth()
         # data
-        a_a = np.array(this_line.get_data())
+        a_a = array(this_line.get_data())
         g_x = a_a[0, :]
         g_y = a_a[1, :]
 
@@ -85,7 +84,21 @@ def extract_data(fig):
                 "line_width": line_width,
                 "x": g_x,
                 "y": g_y,
+                "file_path": "",
             }
         )
 
     return list_line
+
+
+def save_line_to_file(line, out_path):
+    """
+    save_line_to_file(line, out_path)
+
+    given a dicts containing the line data and properties,
+    we'll write a data file with just the XY data
+    """
+    x = array(line["x"])
+    y = array(line["y"])
+
+    savetxt(out_path, column_stack([x, y]), fmt="%.4f", delimiter=" ")

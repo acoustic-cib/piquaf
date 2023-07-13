@@ -35,12 +35,8 @@ from piquaf.graph import PGraph
 def test_tmpfile():
     gg = PGraph()
     gg.create_figure()
+    gg.write_to_file("test.pdf")
 
-    FLAG_OK = False
-    with tempfile.TemporaryDirectory() as tmpdirname:
-        print(tmpdirname)
-        file_path = "test.pdf"
-        gg.write_to_file(file_path)
-        FLAG_OK = True
+    FLAG_OK = True
 
     assert FLAG_OK, "FLAG_OK is False"

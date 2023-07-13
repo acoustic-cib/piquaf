@@ -18,10 +18,14 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install dependencies
         run: |
-          choco install tinytex
+          choco install texlive
           python -m pip install --upgrade pip
           pip install ruff pytest
           pip install -r requirements.txt
+      - name: test latex
+        run: |
+          # see if we can run pdflatex
+          
       - name: Lint with ruff
         run: |
           # stop the build if there are Python syntax errors or undefined names
